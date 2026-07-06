@@ -479,7 +479,7 @@ export function ProductsManager({ initialProducts, categories }: ProductsManager
               <TableRow className="hover:bg-transparent">
                 <TableCell colSpan={7} className="text-center py-16 text-zinc-400">
                   <Coffee className="h-10 w-10 mx-auto mb-3 text-zinc-300 stroke-[1.5]" />
-                  لم يتم العثور على أي منتجات. اضغط على "إضافة منتج جديد" للبدء.
+                  {'لم يتم العثور على أي منتجات. اضغط على "إضافة منتج جديد" للبدء.'}
                 </TableCell>
               </TableRow>
             )}
@@ -635,7 +635,7 @@ export function ProductsManager({ initialProducts, categories }: ProductsManager
           <DialogHeader className="text-right">
             <DialogTitle className="text-lg font-bold font-serif text-red-600">تأكيد حذف المنتج</DialogTitle>
             <DialogDescription className="text-zinc-500 text-xs mt-1">
-              هل أنت متأكد من رغبتك في حذف المنتج <span className="font-bold text-[#031636]">"{deletingProduct?.name}"</span>؟
+              هل أنت متأكد من رغبتك في حذف المنتج <span className="font-bold text-[#031636]">&quot;{deletingProduct?.name}&quot;</span>؟
             </DialogDescription>
             <p className="text-[11px] text-[#44474e] mt-3 bg-zinc-50 border border-zinc-100 p-2.5 rounded-lg leading-relaxed">
               سيتم إزالة هذا المنتج وصورته التابعة له نهائياً من الخادم وقاعدة البيانات. لا يمكن التراجع عن هذا الإجراء لاحقاً.
