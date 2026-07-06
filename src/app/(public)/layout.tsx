@@ -56,29 +56,7 @@ export default async function PublicLayout({
       <footer className="border-t border-[#775a19]/10 bg-[#171814] text-[#e5e2dc] font-sans">
         <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
           <div className="flex flex-col md:flex-row-reverse justify-between items-center gap-8 md:gap-0">
-            {/* Links */}
-            <ul className="flex flex-wrap items-center justify-center gap-8">
-              <li>
-                <Link href="/" className="text-[#c9c6c1] hover:text-[#ffdea5] opacity-80 hover:opacity-100 transition-all text-sm md:text-base">
-                  سياسة الخصوصية
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="text-[#c9c6c1] hover:text-[#ffdea5] opacity-80 hover:opacity-100 transition-all text-sm md:text-base">
-                  الشروط والأحكام
-                </Link>
-              </li>
-              <li>
-                <a href="#contact" className="text-[#c9c6c1] hover:text-[#ffdea5] opacity-80 hover:opacity-100 transition-all text-sm md:text-base">
-                  اتصل بنا
-                </a>
-              </li>
-              <li>
-                <Link href="/admin/login" className="text-[#c9c6c1] hover:text-[#ffdea5] opacity-80 hover:opacity-100 transition-all text-sm md:text-base">
-                  لوحة التحكم
-                </Link>
-              </li>
-            </ul>
+
 
             {/* Copyright */}
             <div className="text-center md:text-right">
