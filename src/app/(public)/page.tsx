@@ -14,7 +14,7 @@ export default async function HomePage() {
     getProducts(),
   ])
 
-  const cafeName = cafeInfo?.name || 'سويه'
+  const cafeName = cafeInfo?.name || 'SOIE'
   const cafeDesc = cafeInfo?.description || 'استمتع بأجود أنواع القهوة في أجواء راقية هادئة. تجربة تُحاكي الحواس وتجمع بين الأصالة والحداثة في نسيج حريري من النكهات.'
   const cafeAddress = cafeInfo?.address || 'طريق الملك فهد، حي الياسمين، الرياض'
   const cafePhone = cafeInfo?.phone || '+966 50 123 4567'

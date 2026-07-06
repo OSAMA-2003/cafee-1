@@ -16,7 +16,7 @@ const arefRuqaa = Aref_Ruqaa({
 })
 
 export const metadata: Metadata = {
-  title: "SOI CAFE | سويه كافيه",
+  title: "SOIE CAFE | سويه كافيه",
   description: 'استمتع بالقهوة العضوية المحمصة محلياً بدقة متناهية. مساحة عمل مصممة للمبتكرين والمفكرين والمبدعين.',
   icons: {
     icon: '/logo.png',

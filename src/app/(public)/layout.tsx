@@ -9,7 +9,7 @@ export default async function PublicLayout({
   children: React.ReactNode
 }) {
   const cafeInfo = await getCafeInfo()
-  const cafeName = cafeInfo?.name || 'سويه'
+  const cafeName = cafeInfo?.name || 'SOIE'
   const logoUrl = cafeInfo?.logo_url || '/logo.png'
 
   return (
