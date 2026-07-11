@@ -22,11 +22,11 @@ export default async function HomePage() {
   const cafeCover = cafeInfo?.cover_url || '/hero1.jpg'
 
   const galleryImages = [
-    { src: 'https://instagram.fcai21-2.fna.fbcdn.net/v/t51.82787-15/645935219_17865914505595656_7556095951987743119_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=Mzg0NzAyMTU4MjA2MTc0MzE4NA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTAxNS5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=Kc5rG0kSoIAQ7kNvwG5KPn0&_nc_oc=AdrW6F77p_pw6zA8WQXOQop3QY6d1NxRE3th3oXCM8JUj_sI61IGS4cfXf2-o3GuL4w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fcai21-2.fna&_nc_gid=9WZE1jmLWvuKTKUxVrnCug&_nc_ss=7a22e&oh=00_AQB3Yb4rlcQFlYhSL7rH59KZZ1BtzYspfmtNmwK1er1R9w&oe=6A50B19E', alt: 'تصميم داخلي راقي' },
-    { src: 'https://instagram.fcai21-3.fna.fbcdn.net/v/t51.82787-15/641201439_17865610101595656_5224102711212296587_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=Mzg0NTc2NjcyMTE5ODE1MDQ5Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTAxNS5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=2JfFUUUV_RkQ7kNvwGBFtoi&_nc_oc=AdpTYvXV2CwODDlmLxlWqyFQIgmy6Avd_qfTQwB4fR84EE9YWpHzETUyxDYqp-3V6Ow&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fcai21-3.fna&_nc_gid=9WZE1jmLWvuKTKUxVrnCug&_nc_ss=7a22e&oh=00_AQCLQjnJ0ViiFnDTbwMScp2BCiiepBzyqJwJoT9Ohq1wBQ&oe=6A50B617', alt: 'فن الحليب على القهوة' },
-    { src: 'https://instagram.fcai21-4.fna.fbcdn.net/v/t51.82787-15/648745377_17865771111595656_8685991653212477946_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ig_cache_key=Mzg0NjQxODk3NzUwNTc3NTQ1Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTAxMy5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=IRQMa4Mbjb0Q7kNvwEATN93&_nc_oc=AdrTr_TRq6UaWZMthdqsvMGuqZ0thH_NYrkkX3vXyFES5nGDpP9uceS64owInS1VTSo&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fcai21-4.fna&_nc_gid=9WZE1jmLWvuKTKUxVrnCug&_nc_ss=7a22e&oh=00_AQA1E_D-a4NMzjflZx9fbErKO_H-OXtuHir_DiAtNFseuQ&oe=6A50956A', alt: 'مخبوزات وحلويات فاخرة' },
-    { src: 'https://instagram.fcai21-4.fna.fbcdn.net/v/t51.82787-15/648225246_17865771132595656_531911954037608118_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzg0NjQxOTA3NDMzNTUwNTAwMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTAxMy5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=IHn8-N2SSDEQ7kNvwFyLTpG&_nc_oc=Adp8GsXmRwg9maAgf6VRMfyIDzyHAq_AOn4lHDYugf3D7_fAnoG0O8bq2iqxCb7903E&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fcai21-4.fna&_nc_gid=9WZE1jmLWvuKTKUxVrnCug&_nc_ss=7a22e&oh=00_AQBc2Qt9v6iBILTis80Dh5nYlmVm5Hab05StDKtca3h8Iw&oe=6A50916C', alt: 'تراس خارجي هادئ' },
-    { src: 'https://instagram.fcai21-3.fna.fbcdn.net/v/t51.82787-15/649077628_17865914589595656_7983800446504859642_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ig_cache_key=Mzg0NzAyMTg4NjY5NDA0ODE3Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTAxNi5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=JJucei5IcMIQ7kNvwFAT2Sc&_nc_oc=Adpb3EuExx5fa57vUbEKl_wfJyw-0ahQRi1rMbLDGAn9fsVDPalpj1snIQXPfOPqWqg&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fcai21-3.fna&_nc_gid=9WZE1jmLWvuKTKUxVrnCug&_nc_ss=7a22e&oh=00_AQCdInQ9wrmmsP50nVhyevCov_MfuRVPMgHUzdbnh8fYNw&oe=6A50B119', alt: 'تصميم داخلي راقي' }
+    { src: 'https://instagram.fcai21-2.fna.fbcdn.net/v/t51.82787-15/643542805_17865543657595656_4439769661092486335_n.jpg?stp=dst-jpg_e35_p640x640_sh2.08_tt6&_nc_cat=111&ig_cache_key=Mzg0NTQ4MjgxNjAzMzI3MTI3OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IlNUT1JZLnhwaWRzLjEyMDYuc2RyLnJlZ3VsYXJfcGhvdG8uQzMifQ%3D%3D&_nc_ohc=cA7e-U7iniYQ7kNvwFWFFdR&_nc_oc=AdryAYx-XhXuG5TtMMW9qhnahx-31JEdop1Zd0hrLF-F1PvgRfNwb44lZP6y-4wm0-s&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fcai21-2.fna&_nc_gid=qm5MPcsBmuvpNwWavBjcYA&_nc_ss=7a22e&oh=00_AQAChVg9THrtilcayqORzNtCbNC_G3HtwzDEENoyVYX8Tw&oe=6A58163B', alt: 'تصميم داخلي راقي' },
+    { src: 'https://instagram.fcai21-2.fna.fbcdn.net/v/t51.82787-15/641288014_17865342702595656_8464704073325293858_n.jpg?stp=dst-jpg_e35_p640x640_sh2.08_tt6&_nc_cat=106&ig_cache_key=Mzg0NDczMzU5MjM1MDAzMDM2OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IlNUT1JZLnhwaWRzLjEyMDYuc2RyLnJlZ3VsYXJfcGhvdG8uQzMifQ%3D%3D&_nc_ohc=F2bGOTCop9sQ7kNvwGWQQcq&_nc_oc=Adrbx-_xTEhiFBFpnKVXeTitT-S1TfWfmT4ZygixH2P19RFl5MzMFozVLt5W_Y--Q_o&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fcai21-2.fna&_nc_gid=qm5MPcsBmuvpNwWavBjcYA&_nc_ss=7a22e&oh=00_AQBjufTVL1igftOMTXJhdM4d_Lu8k5ZRbb396fFT_kReiQ&oe=6A581A42', alt: 'فن الحليب على القهوة' },
+    { src: 'https://instagram.fcai21-4.fna.fbcdn.net/v/t51.82787-15/642124840_17865342729595656_4065666222906693614_n.jpg?stp=dst-jpg_e35_p640x640_sh2.08_tt6&_nc_cat=103&ig_cache_key=Mzg0NDczMzY4NDY5MTc3MzAxMA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IlNUT1JZLnhwaWRzLjEyMDYuc2RyLnJlZ3VsYXJfcGhvdG8uQzMifQ%3D%3D&_nc_ohc=OFyw0DJfPT8Q7kNvwECFSzU&_nc_oc=AdoSaQxypoRfILB8Ljg63wIDuk-iwTIaXbm7AKrKPgtmNHQz1x74SZITd_9IynwIPMI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fcai21-4.fna&_nc_gid=qm5MPcsBmuvpNwWavBjcYA&_nc_ss=7a22e&oh=00_AQAqfrp-exRTcCcf0_K5StQm8NHJeTLE4D_OJexhKDbS-w&oe=6A5836CA', alt: 'مخبوزات وحلويات فاخرة' },
+    { src: 'https://instagram.fcai21-2.fna.fbcdn.net/v/t51.82787-15/641838945_17865543729595656_5280381964990588069_n.jpg?stp=dst-jpg_e35_p640x640_sh2.08_tt6&_nc_cat=111&ig_cache_key=Mzg0NTQ4MjkzNjM2Nzg0NTAxNg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IlNUT1JZLnhwaWRzLjEyMDYuc2RyLnJlZ3VsYXJfcGhvdG8uQzMifQ%3D%3D&_nc_ohc=qWTnWTtH0EEQ7kNvwF_wPJK&_nc_oc=Adr1p9d2x5PQAVTbpMtULjo2IGb-8xgSmf2Ck2SW9J8KFH_0po2K6vPUaESNSVuYxMA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fcai21-2.fna&_nc_gid=qm5MPcsBmuvpNwWavBjcYA&_nc_ss=7a22e&oh=00_AQCbzGnq5s7oLhC5-GTyfYrfwsKQ147rxMmIIeBraOvlKA&oe=6A583A9A', alt: 'تراس خارجي هادئ' },
+    { src: 'https://instagram.fcai21-2.fna.fbcdn.net/v/t51.82787-15/684289361_17876824119595656_7697655624524353789_n.jpg?stp=dst-jpg_e35_p640x640_sh2.08_tt6&_nc_cat=106&ig_cache_key=Mzg4OTUwMTg1MzgwOTc0NTU4Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IlNUT1JZLnhwaWRzLjEzMjAuc2RyLnJlZ3VsYXJfcGhvdG8uQzMifQ%3D%3D&_nc_ohc=T-4KQ-ngIncQ7kNvwFGhL3Z&_nc_oc=Adpj7IMdmip90j2S8tVSbxWUE3SQAaVQRdquC-moB8Vao5JH72OO_sF3ubZDbI85zBI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fcai21-2.fna&_nc_gid=qm5MPcsBmuvpNwWavBjcYA&_nc_ss=7a22e&oh=00_AQBE9FcrclYidYNfZ6U8ZkqTC6jbS4flPvJHF4IYKUWkng&oe=6A58361A', alt: 'تصميم داخلي راقي' }
   ]
 
   // Filter active products marked as featured in the database
@@ -121,7 +121,7 @@ export default async function HomePage() {
             </StaggerItem>
 
             {/* Feature 3 (Offset Right) */}
-            <StaggerItem className="md:col-span-5 md:col-start-3 md:-mt-8 group transition-all duration-300 hover:-translate-y-1">
+            <StaggerItem className="md:col-span-5 md:col-start-3  group transition-all duration-300 hover:-translate-y-1">
               <div className="p-10 bg-white border border-[#775a19]/10 rounded-xl relative overflow-hidden shadow-sm">
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#775a19]/5 rounded-tr-full transition-transform duration-700 group-hover:scale-150"></div>
                 <div className="w-20 h-20 rounded-full bg-[#fbf9f8] shadow-[0_10px_30px_rgba(3,22,54,0.06)] flex items-center justify-center mb-6 border border-[#775a19]/20 relative z-10 mx-auto md:mx-0">
@@ -225,7 +225,7 @@ export default async function HomePage() {
 
           {/* Slider Track (Twin tracks for seamless infinite loop) */}
           <div className="flex overflow-hidden relative w-full" dir="ltr">
-            <div className="flex animate-slide-infinite whitespace-nowrap gap-6 py-4 shrink-0">
+            <div className="flex animate-slide-infinite whitespace-nowrap gap-6 py-4 shrink-0 pr-6">
               {galleryImages.map((img, idx) => (
                 <div
                   key={idx}
@@ -243,7 +243,7 @@ export default async function HomePage() {
               ))}
             </div>
 
-            <div className="flex animate-slide-infinite whitespace-nowrap gap-6 py-4 shrink-0" aria-hidden="true">
+            <div className="flex animate-slide-infinite whitespace-nowrap gap-6 py-4 shrink-0 pr-6" aria-hidden="true">
               {galleryImages.map((img, idx) => (
                 <div
                   key={`dup-${idx}`}
@@ -283,24 +283,29 @@ export default async function HomePage() {
               </div>
 
               <div className="space-y-6 mt-8 bg-white/5 p-6 rounded-2xl border border-white/5">
-                <div className="flex items-center gap-4 text-white group hover:translate-x-1.5 transition-transform duration-300">
+                <a
+                  href={`https://maps.app.goo.gl/WrNQRc52fzQCm1Ht6`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-white group hover:translate-x-1.5 transition-transform duration-300 cursor-pointer"
+                >
                   <div className="w-11 h-11 rounded-full bg-[#775a19]/20 flex items-center justify-center group-hover:bg-[#775a19]/30 transition-colors">
                     <MapPin className="text-[#ffdea5] h-5 w-5" />
                   </div>
-                  <span className="text-sm font-medium">{cafeAddress}</span>
-                </div>
+                  <span className="text-sm font-medium hover:text-[#ffdea5] transition-colors">{cafeAddress}</span>
+                </a>
                 <div className="flex items-center gap-4 text-white group hover:translate-x-1.5 transition-transform duration-300">
                   <div className="w-11 h-11 rounded-full bg-[#775a19]/20 flex items-center justify-center group-hover:bg-[#775a19]/30 transition-colors">
                     <Phone className="text-[#ffdea5] h-5 w-5" />
                   </div>
                   <span className="text-sm font-medium" dir="ltr">{cafePhone}</span>
                 </div>
-                <div className="flex items-center gap-4 text-white group hover:translate-x-1.5 transition-transform duration-300">
+                {/* <div className="flex items-center gap-4 text-white group hover:translate-x-1.5 transition-transform duration-300">
                   <div className="w-11 h-11 rounded-full bg-[#775a19]/20 flex items-center justify-center group-hover:bg-[#775a19]/30 transition-colors">
                     <Mail className="text-[#ffdea5] h-5 w-5" />
                   </div>
                   <span className="text-sm font-medium">hello@soiecafe.com</span>
-                </div>
+                </div> */}
               </div>
             </SlideIn>
 

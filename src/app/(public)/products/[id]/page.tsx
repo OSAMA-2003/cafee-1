@@ -173,7 +173,7 @@ export default async function ProductDetailsPage({ params }: ProductDetailsPageP
               {/* Loop Track */}
               <div className="flex overflow-hidden relative w-full">
                 {/* Track 1 */}
-                <div className="flex animate-slide-infinite whitespace-nowrap gap-6 shrink-0 py-2">
+                <div className="flex animate-slide-infinite whitespace-nowrap gap-6 shrink-0 py-2 pr-6">
                   {similarProducts.map((simProduct) => (
                     <Link
                       key={simProduct.id}
@@ -220,7 +220,7 @@ export default async function ProductDetailsPage({ params }: ProductDetailsPageP
                 </div>
 
                 {/* Track 2 (Duplicate for infinite seamless scroll) */}
-                <div className="flex animate-slide-infinite whitespace-nowrap gap-6 shrink-0 py-2" aria-hidden="true">
+                <div className="flex animate-slide-infinite whitespace-nowrap gap-6 shrink-0 py-2 pr-6" aria-hidden="true">
                   {similarProducts.map((simProduct) => (
                     <Link
                       key={`dup-${simProduct.id}`}
