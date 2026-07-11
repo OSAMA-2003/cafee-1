@@ -34,7 +34,7 @@ export default async function ProductDetailsPage({ params }: ProductDetailsPageP
   const similarProducts = allCategoryProducts.filter((p) => p.id !== product.id && p.available)
 
   return (
-    <div className="min-h-screen bg-[#fbf9f8] text-[#031636] pb-24 overflow-hidden">
+    <div className="relative min-h-screen bg-[#fbf9f8] text-[#031636] pb-24 overflow-hidden">
       {/* Background Gradients */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#ffdea5]/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#775a19]/5 rounded-full blur-[120px] pointer-events-none" />
