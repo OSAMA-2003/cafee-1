@@ -160,35 +160,37 @@ export default async function HomePage() {
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {featuredProducts.map((product, idx) => (
                 <StaggerItem key={product.id} className={`group relative ${idx === 1 ? 'md:mt-12' : ''}`}>
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
-                    <div className="relative w-full aspect-[4/5] overflow-hidden bg-zinc-900">
-                      <img
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                        src={product.image_url || 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=80'}
-                        alt={product.name}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#031636]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <Link href={`/products/${product.id}`} className="block relative">
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                      <div className="relative w-full aspect-[4/5] overflow-hidden bg-zinc-900">
+                        <img
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                          src={product.image_url || 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop&q=80'}
+                          alt={product.name}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#031636]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      </div>
+                      <div className="p-8 text-right bg-white relative z-20 -mt-6 mx-4 rounded-xl shadow-[0_-10px_20px_rgba(0,0,0,0.03)] border border-[#efeded]">
+                        <h3 className="font-serif text-2xl font-bold text-[#031636] group-hover:text-[#775a19] transition-colors mb-3">
+                          {product.name}
+                        </h3>
+                        <p className="text-xs text-[#44474e] leading-relaxed line-clamp-2">
+                          {product.description || 'وصف شهي ومميز للمنتج المحضر طازجاً في مقهانا اليوم.'}
+                        </p>
+                      </div>
                     </div>
-                    <div className="p-8 text-right bg-white relative z-20 -mt-6 mx-4 rounded-xl shadow-[0_-10px_20px_rgba(0,0,0,0.03)] border border-[#efeded]">
-                      <h3 className="font-serif text-2xl font-bold text-[#031636] group-hover:text-[#775a19] transition-colors mb-3">
-                        {product.name}
-                      </h3>
-                      <p className="text-xs text-[#44474e] leading-relaxed line-clamp-2">
-                        {product.description || 'وصف شهي ومميز للمنتج المحضر طازجاً في مقهانا اليوم.'}
-                      </p>
-                    </div>
-                  </div>
 
-                  {/* Floating Gold Price Tag */}
-                  <div
-                    className="absolute -top-4 -right-4 bg-gradient-to-br from-[#fed488] to-[#ffdea5] text-[#031636] w-16 h-16 rounded-full flex flex-col items-center justify-center shadow-lg border-4 border-white transform rotate-12 transition-transform duration-300 group-hover:scale-110"
-                    style={{ animationDelay: `${idx * 0.5}s` }}
-                  >
-                    <span className="text-xs font-bold font-sans flex flex-col items-center justify-center leading-none">
-                      <span>{Number(product.price).toFixed(0)}</span>
-                      <img src="/Saudi_Riyal_Symbol.webp" alt="ر.س" className="h-3 w-auto object-contain mt-0.5" />
-                    </span>
-                  </div>
+                    {/* Floating Gold Price Tag */}
+                    <div
+                      className="absolute -top-4 -right-4 bg-gradient-to-br from-[#fed488] to-[#ffdea5] text-[#031636] w-16 h-16 rounded-full flex flex-col items-center justify-center shadow-lg border-4 border-white transform rotate-12 transition-transform duration-300 group-hover:scale-110"
+                      style={{ animationDelay: `${idx * 0.5}s` }}
+                    >
+                      <span className="text-xs font-bold font-sans flex flex-col items-center justify-center leading-none">
+                        <span>{Number(product.price).toFixed(0)}</span>
+                        <img src="/Saudi_Riyal_Symbol.webp" alt="ر.س" className="h-3 w-auto object-contain mt-0.5" />
+                      </span>
+                    </div>
+                  </Link>
                 </StaggerItem>
               ))}
             </StaggerContainer>

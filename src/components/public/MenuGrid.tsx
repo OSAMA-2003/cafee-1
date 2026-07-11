@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useMemo } from 'react'
+import Link from 'next/link'
 import { Category, Product } from '@/types'
 import { Search, Sparkles, AlertCircle, ShoppingBag } from 'lucide-react'
 import { Input } from '@/components/ui/input'
@@ -78,79 +79,81 @@ export function MenuGrid({ categories, products }: MenuGridProps) {
               key={product.id}
               className={`group relative ${!product.available ? 'opacity-65' : ''}`}
             >
-              {/* Card Container for shadow and border background */}
-              <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#775a19]/10 hover:border-[#775a19]/30 hover:shadow-lg transition-all duration-500 pb-3 flex flex-col h-full justify-between">
-                <div>
-                  {/* Image wrapper */}
-                  <div className="relative w-full aspect-[4/5] overflow-hidden bg-zinc-50 border-b border-zinc-100">
-                    {product.image_url ? (
-                      <img
-                        src={product.image_url}
-                        alt={product.name}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="flex h-full w-full flex-col items-center justify-center text-zinc-300 bg-zinc-50">
-                        <ShoppingBag className="h-8 w-8 stroke-[1.5] mb-2" />
-                        <span className="text-[9px] uppercase tracking-wider font-semibold">لا توجد صورة</span>
-                      </div>
-                    )}
-
-                    {/* Sold out overlay */}
-                    {!product.available && (
-                      <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px] flex items-center justify-center z-10">
-                        <span className="rounded-full border border-red-500/20 bg-red-950/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-red-400">
-                          نفد
-                        </span>
-                      </div>
-                    )}
-
-                    {/* Hover Image Overlay Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#031636]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                  </div>
-
-                  {/* Body Wrapper (Overlapping the image just like the homepage) */}
-                  <div className="p-4 text-right bg-white relative z-20 -mt-5 mx-3 rounded-xl shadow-[0_-8px_16px_rgba(0,0,0,0.02)] border border-[#efeded] flex flex-col justify-between min-h-[110px]">
-                    <div className="space-y-1">
-                      <h3 className="font-serif text-sm sm:text-base font-bold text-[#031636] group-hover:text-[#775a19] transition-colors leading-tight line-clamp-1">
-                        {product.name}
-                      </h3>
-                      {product.description && (
-                        <p className="text-[10px] sm:text-xs text-[#44474e] leading-relaxed line-clamp-2">
-                          {product.description}
-                        </p>
+              <Link href={`/products/${product.id}`} className="block h-full relative">
+                {/* Card Container for shadow and border background */}
+                <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#775a19]/10 hover:border-[#775a19]/30 hover:shadow-lg transition-all duration-500 pb-3 flex flex-col h-full justify-between">
+                  <div>
+                    {/* Image wrapper */}
+                    <div className="relative w-full aspect-[4/5] overflow-hidden bg-zinc-50 border-b border-zinc-100">
+                      {product.image_url ? (
+                        <img
+                          src={product.image_url}
+                          alt={product.name}
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full flex-col items-center justify-center text-zinc-300 bg-zinc-50">
+                          <ShoppingBag className="h-8 w-8 stroke-[1.5] mb-2" />
+                          <span className="text-[9px] uppercase tracking-wider font-semibold">لا توجد صورة</span>
+                        </div>
                       )}
+
+                      {/* Sold out overlay */}
+                      {!product.available && (
+                        <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px] flex items-center justify-center z-10">
+                          <span className="rounded-full border border-red-500/20 bg-red-950/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-red-400">
+                            نفد
+                          </span>
+                        </div>
+                      )}
+
+                      {/* Hover Image Overlay Gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#031636]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                    </div>
+
+                    {/* Body Wrapper (Overlapping the image just like the homepage) */}
+                    <div className="p-4 text-right bg-white relative z-20 -mt-5 mx-3 rounded-xl shadow-[0_-8px_16px_rgba(0,0,0,0.02)] border border-[#efeded] flex flex-col justify-between min-h-[110px]">
+                      <div className="space-y-1">
+                        <h3 className="font-serif text-sm sm:text-base font-bold text-[#031636] group-hover:text-[#775a19] transition-colors leading-tight line-clamp-1">
+                          {product.name}
+                        </h3>
+                        {product.description && (
+                          <p className="text-[10px] sm:text-xs text-[#44474e] leading-relaxed line-clamp-2">
+                            {product.description}
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
+
+                  {/* Footer details inside the card */}
+                  <div className="px-4 pt-3 mt-3 border-t border-zinc-100 flex items-center justify-between flex-row-reverse text-[9px] sm:text-[10px]">
+                    <span className="font-bold uppercase tracking-widest text-[#775a19]">
+                      {categories.find((c) => c.id === product.category_id)?.name || 'مشروب'}
+                    </span>
+
+                    {product.available ? (
+                      <span className="inline-flex items-center gap-1 font-semibold text-emerald-600">
+                        <Sparkles className="h-3 w-3" />
+                        متوفر
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 font-semibold text-red-500">
+                        <AlertCircle className="h-3 w-3" />
+                        غير متوفر
+                      </span>
+                    )}
+                  </div>
                 </div>
 
-                {/* Footer details inside the card */}
-                <div className="px-4 pt-3 mt-3 border-t border-zinc-100 flex items-center justify-between flex-row-reverse text-[9px] sm:text-[10px]">
-                  <span className="font-bold uppercase tracking-widest text-[#775a19]">
-                    {categories.find((c) => c.id === product.category_id)?.name || 'مشروب'}
+                {/* Floating Circular Price Tag (Positioned exactly like the home page, scaled down) */}
+                <div className="absolute -top-2.5 -right-2.5 bg-gradient-to-br from-[#fed488] to-[#ffdea5] text-[#031636] w-12 h-12 rounded-full flex flex-col items-center justify-center shadow-md border-2 border-white transform rotate-12 transition-transform duration-300 group-hover:scale-110 z-30">
+                  <span className="text-[10px] font-bold font-sans flex flex-col items-center justify-center leading-none">
+                    <span>{Number(product.price).toFixed(0)}</span>
+                    <img src="/Saudi_Riyal_Symbol.webp" alt="ر.س" className="h-2.5 w-auto object-contain mt-0.5" />
                   </span>
-
-                  {product.available ? (
-                    <span className="inline-flex items-center gap-1 font-semibold text-emerald-600">
-                      <Sparkles className="h-3 w-3" />
-                      متوفر
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 font-semibold text-red-500">
-                      <AlertCircle className="h-3 w-3" />
-                      غير متوفر
-                    </span>
-                  )}
                 </div>
-              </div>
-
-              {/* Floating Circular Price Tag (Positioned exactly like the home page, scaled down) */}
-              <div className="absolute -top-2.5 -right-2.5 bg-gradient-to-br from-[#fed488] to-[#ffdea5] text-[#031636] w-12 h-12 rounded-full flex flex-col items-center justify-center shadow-md border-2 border-white transform rotate-12 transition-transform duration-300 group-hover:scale-110 z-30">
-                <span className="text-[10px] font-bold font-sans flex flex-col items-center justify-center leading-none">
-                  <span>{Number(product.price).toFixed(0)}</span>
-                  <img src="/Saudi_Riyal_Symbol.webp" alt="ر.س" className="h-2.5 w-auto object-contain mt-0.5" />
-                </span>
-              </div>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerContainer>

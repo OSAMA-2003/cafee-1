@@ -245,3 +245,36 @@ export async function toggleProductFeatured(id: string, featured: boolean) {
   revalidatePath('/admin/products')
   return { success: true }
 }
+
+export async function getProductById(id: string): Promise<Product | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase
+    .from('products')
+    .select('*')
+    .eq('id', id)
+    .single()
+
+  if (error) {
+    console.error('Error fetching product by ID:', error.message)
+    return null
+  }
+
+  return data
+}
+
+export async function getProductsByCategory(categoryId: string): Promise<Product[]> {
+  const supabase = await createClient()
+  const { data, error } = await supabase
+    .from('products')
+    .select('*')
+    .eq('category_id', categoryId)
+    .order('created_at', { ascending: false })
+
+  if (error) {
+    console.error('Error fetching products by category:', error.message)
+    return []
+  }
+
+  return data || []
+}
+
